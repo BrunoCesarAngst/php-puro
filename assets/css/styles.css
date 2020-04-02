@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+/* margin: 0 20px; */
+text-decoration: none;
+}
+
+body {
+background: #FCD365;
+/* margin: 0 20px; */
+}
+
+header {
+background: #964B00;
+padding: 5px;
+margin-top: 55px;
+}
+
+.avatar {
+width: 120px;
+height: 120px;
+margin-left: 80px;
+}
+
+q {
+float: right;
+margin-top: 65px;
+margin-right: 120px;
+font-size: 30px;
+font-weight: bold;
+font: black;
+}
+
+nav {
+background: #c99814;
+
+}
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+
+li {
+float: left;
+}
+
+li a {
+display: block;
+color: black;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+li a:hover:not(.active) {
+background-color: #c99814;
+}
+
+section {
+background: white;
+}
+
+aside {
+margin-top: 50px;
+padding: 30px 0;;
+background: #0F961F;
+}
+
+aside ul.list-group {
+list-style-type: none;
+margin: 0;
+padding: 0;
+height: 100%;
+}
+
+aside ul.list-group li a {
+display: block;
+color: #000;
+/* text-align: center; */
+padding: 8px 16px;
+text-decoration: none;
+}
+
+@media screen and (min-width: 900px) {
+/* aside ul.list-group {
+    width: 100%;
+    height: auto;
+    position: relative;
+} */
+
+aside ul.list-group li a {
+    float: left;
+    padding: 15px;
+}  
+}
+
+@media screen and (min-width: 400px) {
+aside ul.list-group li a {
+    text-align: center;
+    float: none;
+}
+}
+
+footer {
+text-align: center;
+padding: 6px;
+/* background: #14c991; */
+/* background: #0F961F; */
+background: #c99814;
+}
+
+.brand-logo {
+    margin-left: 14px;
+}
+
+.centerCheck {
+    justify-content: center;
+    display: flex;
+}
+
+.centerCheck label {
+    position: relative !important;
+}
