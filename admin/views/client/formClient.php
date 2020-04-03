@@ -1,5 +1,5 @@
-<?php if (isset( $data["idCliente"])):?>
-  <input name="idClient" type="text" value="<?= $data["idCliente"]?>" hidden>
+<?php if (isset( $data["idClient"])):?>
+  <input name="idClient" type="text" value="<?= $data["idClient"]?>" readonly>
 <?php endif;?>
 
   <div class="row">

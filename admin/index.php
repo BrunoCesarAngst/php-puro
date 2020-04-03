@@ -27,7 +27,7 @@
           $User = new UsersController();
           
           if (!isset($_GET["a"])) {
-            $User -> index();
+            // $User -> index();
           } else {
             switch ($_GET["a"]) {
               case 'vl' : $User -> validateLogin(); break;
@@ -49,7 +49,7 @@
               case 'c' : $controller -> insertClient(); break;
               case 'ua' : $controller -> updateClientAction(); break;
               case 'u' : $controller -> updateClient($_GET["id"]); break;
-              case 'd' : $controller -> deleteCliente(); break;
+              case 'd' : $controller -> deleteCliente($_GET["id"]); break;
             }
           }
         break;
