@@ -2,19 +2,20 @@
 	class UsersModel {
 		var $result;
 
+		function __construct() {
+			require_once("db/ConnectClass.php");
+		}
+
 		public function consultUser($login) {
 
-			require_once('db/ConnectClass.php');
 			$Oconn = new connectClass();
 			$Oconn -> openConnect();
-			$conn = $Oconn -> getConn();
-			$sql = " SELECT * FROM users WHERE name='".$login."' "; 
-			
+			$sql = " SELECT * FROM users WHERE name='".$login."'";
+			$conn = $Oconn -> getConn();			
 			$this -> result = $conn -> query($sql);
 		}
 							
 		public function getsQuery() {
-
 			return $this -> result;
 		}
 	}

@@ -43,13 +43,13 @@
           if (!isset($_GET["a"])) {
             $controller -> index();
           } else {
-            switch ($_GET["a"]) {
+            switch ($_REQUEST["a"]) {
               case 'i' : $controller -> index(); break;
               case 'ca' : $controller -> insertClientAction(); break;
               case 'c' : $controller -> insertClient(); break;
+              case 'u' :  $idClient = $_GET["idClient"];  $controller -> updateClient($idClient); break;
               case 'ua' : $controller -> updateClientAction(); break;
-              case 'u' : $controller -> updateClient($_GET["id"]); break;
-              case 'd' : $controller -> deleteCliente($_GET["id"]); break;
+              case 'd' : $idClient = $_GET["idClient"]; $controller -> deleteCliente($idClient); break;
             }
           }
         break;
