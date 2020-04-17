@@ -7,6 +7,7 @@
             <th>Endereço</th>
             <th>Email</th>
             <th>Telefone</th>
+            <th>Imagem</th>
             <th>Ação</th>
         </tr>
     </thead>

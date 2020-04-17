@@ -4,7 +4,7 @@
 		<tr>
 			<th>Id</th>
 			<th>Nome</th>
-      <th>Sexo</th>
+      <th>Gênero</th>
       <th>Escolha</th>
       <th>Seleção</th>
       <th>Opção</th>
@@ -15,13 +15,13 @@
 	<tbody>
 		<?php foreach ($arrayClients as $item): ?>
 			<tr>
-				<td><?=$item["idClient"] ?></td>
-				<td><?=$item["name"] ?></td>
-				<td><?=$item["gender"] ?></td>
-				<td><?=$item["choices"] ?></td>
-				<td><?=$item["selection"] ?></td>
-				<td><?=$item["options"] ?></td>
-				<td><?=$item["redaction"] ?></td>
+				<td><?= isset($item["idClient"]) ? $item["idClient"] : null ?></td>
+				<td><?= isset($item["name"]) ? $item["name"] : null ?></td>
+				<td><?= isset($item["gender"]) ? $item["gender"] : null ?></td>
+				<td><?= isset($item["choices"]) ? $item["choices"] : null ?></td>
+				<td><?= isset($item["selection"]) ? $item["selection"] : null ?></td>
+				<td><?= isset($item["options"]) ? $item["options"] : null ?></td>
+				<td><?= isset($item["redaction"]) ? $item["redaction"] : null ?></td>
 		<?php endforeach; ?>
 	</tbody>
 </table>

@@ -26,6 +26,24 @@
     </div>
   </div>
   <div class="row">
+
+  <div class="file-field input-field col s8">
+      <div class="btn">
+        <span>photo</span>
+          <input name="photo" type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+    <?php if(isset($data['photo'])){ ?>
+      <img
+        class="col s4"
+        src="<?=$data['photo']?>"
+        style="max-width:100px; max-height:100px;"
+      >
+    <?php }?>
+  </div>
     
   <button class="btn waves-effect waves-light right green darken-1 btn-small" type="submit" name="action">
     Salvar

@@ -1,7 +1,6 @@
 <?php 
     // Arquivo onde tem a classe Controller
     require_once('controllers/Controller.php');
-    
     class ClientsController extends Controller {
         var $ClientModel;
         
@@ -16,11 +15,6 @@
         public function index(){
             $this ->  listClients();
         }
-
-        // public function listClients(){
-        //     $result = $this->ClientModel->list();
-        //     $this->templateData('views/client/listClient.php', $result);
-        // }
 
         public function listClients(){
 
@@ -49,9 +43,14 @@
                 "address" => $_POST['address'],
                 "email" => $_POST['email'],
                 "phone" => $_POST['phone'],
+                "photo" => $_POST['idClient'],
             );
 
-            $this -> ClientModel -> insertClient($client);
+            $insert_id = $this -> ClientModel -> insertClient($client);
+            
+            if(isset($_FILES['photo'])) {
+                $this -> saveFile($_FILES['photo'], $insert_id);
+            }
 
             header("Location: ?c=c&m=i");
         }
@@ -72,6 +71,10 @@
                 "email" => $_POST['email'],
                 "phone" => $_POST['phone'],
             );
+
+            if(isset($_FILES['photo'])) {
+                $this -> saveFile($_FILES['photo'], $client['idClient']);
+            }
             
             $this -> ClientModel -> updateClient($client);
             
@@ -79,8 +82,9 @@
         }
         
         public function deleteCliente ($idClient){
-            $this-> ClientModel -> deleteClient($_GET['idClient']);            
-            // $this -> listClients();
+            $img = $_GET['assets/img/clients'];
+            unlink('clients'."$idclient".'.jpg');
+            $this-> ClientModel -> deleteClient($_GET['idClient']);           
             header("Location: ?c=c&m=i");
         }
     }
